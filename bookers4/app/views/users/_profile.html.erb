@@ -1,0 +1,33 @@
+<table class="table">
+		<tr><%= attachment_image_tag(@book.user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
+
+		<tr>
+			<th>name</th>
+			<th><%= @user.name %></th>
+		</tr>
+
+		<tr>
+			<th>introduction</th>
+			<th><%= @user.introduction %></th>
+		</tr>
+		
+		<tr>
+			<th>follows</th>
+			<th><%= render 'follow/stats' %></th>
+		</tr>
+		
+		<tr>
+			<th>followers</th>
+			<th><%= render 'follow/stats2' %></th>
+		</tr>
+		<tr>
+			<th><%= render 'follow/follow_form' %></th>
+		</tr>
+			
+　　　
+		
+</table>
+
+<div class="row">
+	<%= link_to '',edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{@user.id}" %>
+</div>
